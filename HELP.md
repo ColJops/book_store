@@ -1,3 +1,3 @@
 # Getting Started
 
-Projekt Księgarni (Front-end i back-end) w Spring Boot.
+Prosty projekt księgarni w SpringBoot.
