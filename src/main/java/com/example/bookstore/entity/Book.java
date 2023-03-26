@@ -13,17 +13,21 @@ public class Book {
     @Id
     @GeneratedValue
     private Integer id;
-    private String name;
+    private String title;
     private String description;
+    private String author;
+    private String gender;
     private LocalDate timestamp;
 
     public Book() {
     }
 
-    public Book(Integer id, String name, String description) {
+    public Book(Integer id, String title, String description, String author, String gender) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.description = description;
+        this.author = author;
+        this.gender = gender;
         this.timestamp = LocalDate.now();
     }
 
@@ -31,18 +35,32 @@ public class Book {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
     public String getDescription() {
         return description;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public LocalDate getTimestamp() {
+        return timestamp;
+    }
+
     public static Book fromDto(BookDto bookDto){
         return new Book(
             bookDto.getId(),
-                bookDto.getName(),
+                bookDto.getTitle(),
+                bookDto.getAuthor(),
+                bookDto.getGender(),
                 bookDto.getDescription()
         );
     }
